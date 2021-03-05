@@ -60,11 +60,13 @@
     @endguest
 
     <div class="text-allign center">
+    @auth
         <h1> <pre>
             
                                                  WELCOME!!!
         
         </pre> </h1>
+        @endauth
     </div>
 </body>
 </html>

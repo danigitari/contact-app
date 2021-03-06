@@ -41,11 +41,14 @@ class ContactController extends Controller
             'file' => 'image|nullable',
         ]);
 
+        // dd(json_encode($request->phonenumbers));
         try {
             $contact = new DashBoard();
             $contact->fullname = $request->fullname;
             $contact->phonenumbers = $request->phonenumbers;
             $contact->email = $request->email;
+            $contact->phone = $request->phone;
+            $ImageName = 'profile';
             if($request->hasFile('file'))
             {
                 $image = $request->file('file');
@@ -70,7 +73,6 @@ class ContactController extends Controller
     {
         try {
             $contact = DashBoard::findOrFail($id);
-
             response()->json(['data' => $contact, 'code' => Response::HTTP_OK]);
         } catch (\Throwable $th) {
             return response()->json(['message' => $th->getMessage(), 'code' => Response::HTTP_UNPROCESSABLE_ENTITY]);
@@ -99,6 +101,7 @@ class ContactController extends Controller
             $contact->fullname = $request->fullname;
             $contact->phonenumbers = $request->phonenumbers;
             $contact->email = $request->email;
+            $ImageName='profile';
             if($request->hasFile('file'))
             {
                 $image = $request->file('file');

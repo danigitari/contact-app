@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/contacts', '\App\Http\Controllers\DashBoard');
+Route::apiResource('/contacts', '\App\Http\Controllers\ContactController');

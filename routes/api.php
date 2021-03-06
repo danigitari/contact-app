@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get("list",[DashBoardController::class,'list']);
+Route::get("list/{id}",[DashBoardController::class,'listid']);
+Route::delete('/delete/{id}',[DashBoardController::class,'delete']);
+Route::post("update/{id}",[DashBoardController::class,'update']);
+Route::post('/add',[DashBoardController::class,'store']);

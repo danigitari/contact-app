@@ -35,7 +35,8 @@
              <td><a href="/delete/{{ $item->id }}" class="btn btn-danger"> DELETE </a></td>
              @endforeach
          </tr>
-     </tbody> 
+     </tbody>
+     <a href="/" class="btn btn-primary">home</a>
     </table></div></div>
 </body>
 </html>

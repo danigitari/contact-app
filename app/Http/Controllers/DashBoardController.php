@@ -116,6 +116,19 @@ public function update(Request $request)
       $change->delete();
       return back()->with('contact deleted','contact deleted.');
   } 
-       
+       public function delete($id){
+    $change = Dashboard::find($id);
+    unlink(public_path('images'). '/'.$change->file);
+    $change->delete();
+    return "deleted successfully";}
+
+  public function list(){
+      return Dashboard::all();
+  }
+
+  
+  public function listid($id){
+    return Dashboard::find($id);
+}
         
 }
